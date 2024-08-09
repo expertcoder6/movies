@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 12345678
+  host: localhost
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  # database: magical_swap_backend_heroku_may20
+  database: new_movies
+  password: 12345678
+
+# production:
+#   <<: *default
+#   database: magical_swap_production
+#   username: magical_swap
+#   password: <%= ENV["MAGICAL_SWAP_DATABASE_PASSWORD"] %>
