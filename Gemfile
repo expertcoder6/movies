@@ -52,3 +52,4 @@ gem 'active_model_serializers'
 gem 'will_paginate', '~> 3.3'
 gem 'rack-cors'
 gem "pg"
+gem 'rswag'

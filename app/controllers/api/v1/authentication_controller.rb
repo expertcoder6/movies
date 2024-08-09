@@ -7,7 +7,7 @@ module Api
         if user.save
           render json: { message: 'User created successfully' }, status: :ok
         else
-          render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+          render json: { errors: user.errors.full_messages }, status: 400
         end
       end
 
@@ -19,7 +19,7 @@ module Api
           	user: user, 
           	token: token }, status: :ok
         else
-          render json: { errors: 'Invalid email or password' }, status: :unauthorized
+          render json: { errors: 'Invalid email or password' }, status: 400
         end
       end
 
